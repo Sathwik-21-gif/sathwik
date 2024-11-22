@@ -1,4 +1,3 @@
-
 import streamlit as st
 
 # Define the STAR_DELTA function
@@ -24,14 +23,11 @@ if st.button("Calculate"):
     # Validate inputs
     if R1 > 0 and R2 > 0 and R3 > 0:
         R12, R23, R31 = STAR_DELTA(R1, R2, R3)
-        st.success(f"Calculated Resistances:\nR12 = {R12:.2f} Ω\nR23 = {R23:.2f} Ω\nR31 = {R31:.2f} Ω")
+        # Convert the results to kilo-ohms (kΩ)
+        R12_kilo = R12 / 1000
+        R23_kilo = R23 / 1000
+        R31_kilo = R31 / 1000
+        
+        st.success(f"Calculated Resistances in kilo-ohms:\nR12 = {R12_kilo:.3f} kΩ\nR23 = {R23_kilo:.3f} kΩ\nR31 = {R31_kilo:.3f} kΩ")
     else:
-        st.error("Please enter positive values for R1, R2, and R3.")
-
-
-
-
-
-
-
-
+        st.error("Please enter positive values for R1, R2, and R3.")
