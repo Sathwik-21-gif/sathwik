@@ -23,7 +23,7 @@ if st.button("Calculate"):
     # Validate inputs
     if R1 > 0 and R2 > 0 and R3 > 0:
         R12, R23, R31 = STAR_DELTA(R1, R2, R3)
-        # Convert the results to ohms (kΩ)
+        # Convert the results to ohms (Ω)
         R12_kilo = R12 / 1000
         R23_kilo = R23 / 1000
         R31_kilo = R31 / 1000
